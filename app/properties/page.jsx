@@ -1,7 +1,9 @@
 import PropertyCard from "@/components/PropertyCard";
-import properties from "@/properties.json";
+import { fetchPropertiesData } from "@/utils/requests";
 
-const PropertiesPage = () => {
+const PropertiesPage = async () => {
+    const properties = await fetchPropertiesData();
+    properties.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
 
     return (
         <section className="px-4 py-6">
