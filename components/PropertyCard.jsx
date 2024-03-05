@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaBed, FaBath, FaRulerCombined, FaMoneyBill, FaMapMarker } from "react-icons/fa"
+import { FaBed, FaBath, FaRulerCombined, FaMoneyBill, FaMapMarker } from "react-icons/fa";
 
 const PropertyCard = ({ property }) => {
     const getRateDisplay = () => {
         const { rates } = property;
-        const rate = rates.monthly ? `${rates.monthly}/mo` : `${rates.weekly}/wk`
+        const rate = rates.monthly ? `${rates.monthly}$/mo` : `${rates.weekly}/wk`
         return rate;
     }
 
@@ -78,7 +78,7 @@ const PropertyCard = ({ property }) => {
                         <span className="text-orange-700"> {property.location.city} {property.location.state} </span>
                     </div>
                     <Link
-                        href="property"
+                        href={`/properties/${property._id}`}
                         className="h-[36px] bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-center text-sm"
                     >
                         Details
