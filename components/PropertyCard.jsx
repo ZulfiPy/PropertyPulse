@@ -5,14 +5,14 @@ import { FaBed, FaBath, FaRulerCombined, FaMoneyBill, FaMapMarker } from "react-
 const PropertyCard = ({ property }) => {
     const getRateDisplay = () => {
         const { rates } = property;
-        const rate = rates.monthly ? `${rates.monthly}$/mo` : `${rates.weekly}/wk`
+        const rate = rates.monthly ? `${rates.monthly}$/mo` : `${rates.weekly}$/wk`;
         return rate;
     }
 
     return (
         <div className="rounded-xl shadow-md relative">
             <Image
-                src={`/images/properties/${property.images[0]}`}
+                src={property.images[0]}
                 alt=""
                 height={0}
                 width={0}
